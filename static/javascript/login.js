@@ -29,7 +29,7 @@ function checkCookies() {
     }
 	 }
 	if (found == false){
-		storeCookies("register");
+		storeCookies("page", "register");
     value = register;
 	}
   return value;
@@ -50,17 +50,17 @@ function pageChange(){
   }
 }
 
-function storeCookies(name){
+function storeCookies(name, value){
   var myDate = new Date();
 	myDate.setMonth(myDate.getMonth() + 1);
-	document.cookie=name; expires="+myDate.toUTCString()+"; path=/";
+	document.cookie=name+"="+value+"; expires="+myDate.toUTCString()+"; path=/";
 }
 
 function register() {
 	event.preventDefault();
-	storeCookies("register");
+	storeCookies("page", "register");
 }
 function login() {
 	event.preventDefault();
-	storeCookies("login");
+	storeCookies("page", "login");
 }
