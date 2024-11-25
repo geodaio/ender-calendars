@@ -23,7 +23,7 @@ def aboutUs():
 @app.route("/calendar.html")
 def calendar():
     if session.get("user_id") is None:
-        return redirect("/login")
+        return redirect("/login.html")
     else:
         return render_template("calendar.html")
 
