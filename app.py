@@ -1,6 +1,10 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder="api")
+app.confgc["SQLALCHEMY_DATABASE_URI"] = "postgres://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
+
+db = SQLAlchemy(app)
 
 @app.route("/home.html")
 def index():
