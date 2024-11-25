@@ -3,6 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder="api")
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
+app.config["SESSION_PERMANENT"] = False
+app.confg["SESSION_TYPE"] = "filesystem"
+
+Session(app)
 
 db = SQLAlchemy(app)
 
@@ -27,7 +31,28 @@ def howItWorks():
 
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
-    return render_template("login.html")
+    if request.method == "POST":
+        username = request.form.get("username")
+        userPassword = request.form.get("password")
+        userConf = request.form.get("confPassword")
+
+        if not userName:
+             return "1"
+        elif db.execute("SELECT username FROM users WHERE username = ?", username):
+             return "2"
+        elif not userPassword:
+            return "3"
+        elif not userConf:
+            return "4"
+        elif userPassword != userConf:
+            return "5"
+
+        db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
+
+    return redirect("/")
+    
+    else: 
+        return render_template("login.html")
 
 @app.route("/")
 def fallback():
