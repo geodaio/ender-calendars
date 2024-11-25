@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__, template_folder="api")
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
 app.config["SESSION_PERMANENT"] = False
-app.confg["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_TYPE"] = "filesystem"
 
 Session(app)
 
