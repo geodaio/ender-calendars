@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %} Calendar {% endblock %}
+
+{% block main %}
+
+{% if session["id"] %}
+
+<p>application</p>
+
+{% else %}
+
+<p>redirect</p>
+
+{% endif %}
+
+{% endblock %}
