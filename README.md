@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <p>A calendar that will help organize schoolwork, chores, reminders, and other personal needs, all from your web browser.</p>
-
+<p><i>Due to repository issues, this is the second repository fo rthis project. For earlier commit history, please visit <a href="https://github.com/geodaio/Ender">Ender</a></i></p>
 <hr>
 
 <h2>Group Members</h2>
