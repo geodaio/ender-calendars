@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>Ender: {% block title %}{% endblock %}</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logoLight.svg') }}" id="favicon">
+      
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@0,6..72;1,6..72&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div id="headerFirst">
+        <a href="home.html"><img src="" alt="Logo Temp" id="headerLogo"></a>
+        <nav id="headerNav">
+          <a href="home.html" title="To the Home Page">Home</a>
+          <a href="aboutUs.html" title="To the About Us Page">About Us</a>
+          <a href="howItWorks.html" title="To the How It Works Page">How It Works</a>
+          <a href="calendar.html" title="To the Calendar">Calendar</a>
+        </nav>
+      </div>
+      <div id="headerAside">
+        <p id="headerUsername">USERNAME</p>
+        <a href=""><img src="{{ url_for('static', filename='images/icon.svg') }}" alt="" id="headerProf"></a>
+      </div>
+    </header>
+    
+    {% block main %}
+    {% endblock %}
+
+    <footer>
+
+      
+    </footer>
+    <script src="{{url_for('static', filename='javascript/favicon.js')}}"></script>
+  </body>
+</html>
+
