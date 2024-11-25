@@ -14,7 +14,7 @@ function checkCookies() {
  		var cleanCookie;
  	    if (c != splitCookies.length){
  	      cleanCookie = splitCookies[c].trim();
- 		}
+ 			}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
  		if (cleanerCookie[c] === "register") {
@@ -30,8 +30,10 @@ function checkCookies() {
 	 }
 	if (found == false){
 		storeCookies("page", "register");
+		console.log("register");
     value = register;
 	}
+	console.log(document.cookie);
   return value;
 };
 
