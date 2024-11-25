@@ -16,7 +16,10 @@ def aboutUs():
 
 @app.route("/calendar.html")
 def calendar():
-    return render_template("calendar.html")
+    if session.get("user_id") is None:
+        return redirect("/login")
+    else:
+        return render_template("calendar.html")
 
 @app.route("/howItWorks.html")
 def howItWorks():
