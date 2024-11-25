@@ -51,7 +51,7 @@ def page():
 
         db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
-    return redirect("/")
+        return redirect("/")
     
     else: 
         return render_template("login.html")
