@@ -37,9 +37,9 @@ def howItWorks():
 def page():
     value = request.cookies.get("page")
     if request.method == "POST" and value == "register":
-        username = request.form.get("logUsername")
-        userPassword = request.form.get("logPassword")
-        userConf = request.form.get("regConf")
+        username = request.form.get("regUsername")
+        userPassword = request.form.get("regPassword")
+        userConf = request.form.get("confPassword")
 
         #if not userName:
              #return "1"
