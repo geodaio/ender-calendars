@@ -36,14 +36,14 @@ def howItWorks():
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
     value = request.cookies.get("page")
-    print(value)
+    print(value+"1")
     if request.method == "POST" and value == "register":
         username = request.form.get("regUsername")
-        print(username)
+        print(username+"2")
         userPassword = request.form.get("regPassword")
-        print(userPassword)
+        print(userPassword+"3")
         userConf = request.form.get("confPassword")
-        print(userConf)
+        print(userConf+"4")
 
         #if not userName:
              #return "1"
