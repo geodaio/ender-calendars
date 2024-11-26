@@ -31,6 +31,7 @@ function checkCookies() {
 	if (found == false){
 		storeCookies("page", "register");
 		console.log("register");
+		pageChange();
     value = register;
 	}
 	console.log(document.cookie);
