@@ -1,6 +1,6 @@
 window.onload = function(){
   var value = checkCookies();
-	pageChange(value);
+	pageSet(value);
 }
 
 function checkCookies() {
@@ -37,6 +37,23 @@ function checkCookies() {
 	console.log(document.cookie);
   return value;
 };
+
+function pageSet(value){
+	if (value == null){
+		value = checkCookies();
+	}
+
+  if (value === "login"){
+		console.log("hit1")
+    document.getElementById("login").style.visibility = "visible";
+    document.getElementById("register").style.visibility = "hidden";
+  }
+  else if (value === "register"){
+		console.log("hit2")
+    document.getElementById("login").style.visibility = "hidden";
+    document.getElementById("register").style.visibility = "visible";
+  }
+}
 
 function pageChange(value){
 	if (value == null){
