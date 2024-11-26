@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request, session, make_respo
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import insert
 
 app = Flask(__name__, template_folder="api")
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
@@ -11,6 +12,18 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQLAlchemy(app)
+
+class users(db.Model):
+    userid=db.Column(db.Serial, primary_key=True, nullable=False)
+    username=db.Column(db.Varchar(30), nullable=False)
+    hash=db.Column(db.Text, nullable=False)
+    
+#class calendar(db.Model):
+
+#class subcalendar(db.Model):
+
+#class events(db.Model):
+    
 
 @app.route("/home.html")
 def index():
@@ -36,7 +49,7 @@ def howItWorks():
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
     if request.method == "POST" and request.form["submit"] == "Create an Account":
-        username = request.form.get("regUsername")
+        userName = request.form.get("regUsername")
         print(username)
         userPassword = request.form.get("regPassword")
         print(userPassword)
@@ -53,8 +66,10 @@ def page():
             #return render_template("error.html"), 4
         #elif userPassword != userConf:
             #return render_template("error.html"), 5
-
-        db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
+        newUser = users(username=userName, hash=generate_password_hash(userPassword))
+        db.session.add(newUser)
+        db.session.commit()
+        #db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
         return redirect("/")
     
@@ -71,4 +86,5 @@ def pageNotFound(error):
 
 
 if __name__ == "__main__":
+    db.create_all()
     app.run()
