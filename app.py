@@ -42,7 +42,7 @@ def page():
         userConf = request.form.get("regConf")
 
         if not userName:
-             return render_template("error.html"), 1
+             return "1"
         elif db.execute("SELECT username FROM users WHERE username = ?", username):
              return render_template("error.html"), 2
         elif not userPassword:
