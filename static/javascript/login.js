@@ -62,14 +62,14 @@ function pageChange(value){
 
   if (value === "login"){
 		console.log("hit1")
-    document.getElementById("login").style.visibility = "hidden";
-    document.getElementById("register").style.visibility = "visible";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("register").style.display = "block";
     register();
   }
   else if (value === "register"){
 		console.log("hit2")
-    document.getElementById("login").style.visibility = "visible";
-    document.getElementById("register").style.visibility = "hidden";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("register").style.display = "none";
     login();
   }
 }
