@@ -14,7 +14,7 @@ Session(app)
 db = SQLAlchemy(app)
 
 class users(db.Model):
-    userid=db.Column(db.Serial, primary_key=True, nullable=False)
+    userid=db.Column(db.Integer, primary_key=True, nullable=False)
     username=db.Column(db.Varchar(30), nullable=False)
     hash=db.Column(db.Text, nullable=False)
     
