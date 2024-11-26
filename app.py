@@ -52,9 +52,9 @@ def page():
         #elif userPassword != userConf:
             #return render_template("error.html"), 5
 
-        #db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
+        db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
-        #return redirect("/")
+        return redirect("/")
     
     else: 
         return render_template("login.html")
