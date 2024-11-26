@@ -12,8 +12,6 @@ Session(app)
 
 db = SQLAlchemy(app)
 
-value = None
-
 @app.route("/home.html")
 def index():
     return render_template("home.html")
@@ -37,6 +35,8 @@ def howItWorks():
 
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
+    if request.method != "POST":
+        value = request.cookies.get("page")
     if request.method == "POST" and value == "register":
         username = request.form.get("regUsername")
         print(username)
@@ -61,7 +61,6 @@ def page():
         return redirect("/")
     
     else: 
-        value = request.cookies.get("page")
         return render_template("login.html")
 
 @app.route("/")
