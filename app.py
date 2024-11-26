@@ -41,20 +41,20 @@ def page():
         userPassword = request.form.get("logPassword")
         userConf = request.form.get("regConf")
 
-        if not userName:
-             return "1"
-        elif db.execute("SELECT username FROM users WHERE username = ?", username):
-             return render_template("error.html"), 2
-        elif not userPassword:
-            return render_template("error.html"), 3
-        elif not userConf:
-            return render_template("error.html"), 4
-        elif userPassword != userConf:
-            return render_template("error.html"), 5
+        #if not userName:
+             #return "1"
+        #elif db.execute("SELECT username FROM users WHERE username = ?", username):
+             #return render_template("error.html"), 2
+        #elif not userPassword:
+            #return render_template("error.html"), 3
+        #elif not userConf:
+            #return render_template("error.html"), 4
+        #elif userPassword != userConf:
+            #return render_template("error.html"), 5
 
-        db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
+        #db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
-        return redirect("/")
+        #return redirect("/")
     
     else: 
         return render_template("login.html")
