@@ -23,7 +23,9 @@ def aboutUs():
 @app.route("/calendar.html")
 def calendar():
     if session.get("user_id") is None:
-        return redirect("/login.html")
+        req = make_response(redirect("/login.html"))
+        req.set_cookie("page", "register")
+        return req
     else:
         return render_template("calendar.html")
 
