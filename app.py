@@ -37,20 +37,20 @@ def howItWorks():
 def page():
     value = request.cookies.get("page")
     if request.method == "POST" and value == "register":
-        username = request.form.get("username")
-        userPassword = request.form.get("password")
-        userConf = request.form.get("confPassword")
+        username = request.form.get("logUsername")
+        userPassword = request.form.get("logPassword")
+        userConf = request.form.get("regConf")
 
         if not userName:
-             return "1"
+             return render_template("error.html"), 1
         elif db.execute("SELECT username FROM users WHERE username = ?", username):
-             return "2"
+             return render_template("error.html"), 2
         elif not userPassword:
-            return "3"
+            return render_template("error.html"), 3
         elif not userConf:
-            return "4"
+            return render_template("error.html"), 4
         elif userPassword != userConf:
-            return "5"
+            return render_template("error.html"), 5
 
         db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
