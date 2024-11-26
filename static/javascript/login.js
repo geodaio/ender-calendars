@@ -42,11 +42,13 @@ function pageChange(){
   var value = checkCookies();
 
   if (value === "login"){
+		console.log("hit1")
     document.getElementById("login").style.visibility = "hidden";
     document.getElementById("register").style.visibility = "visible";
     register();
   }
   else if (value === "register"){
+		console.log("hit2")
     document.getElementById("login").style.visibility = "visible";
     document.getElementById("register").style.visibility = "hidden";
     login();
