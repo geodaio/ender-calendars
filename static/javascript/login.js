@@ -1,5 +1,6 @@
 window.onload = function(){
-  checkCookies();
+  var value = checkCookies();
+	pageChange(value);
 }
 
 function checkCookies() {
@@ -12,15 +13,15 @@ function checkCookies() {
  	
  	for (var c = 0; c<=splitCookies.length; c++){
  		var cleanCookie;
- 	    if (c != splitCookies.length){
- 	      cleanCookie = splitCookies[c].trim();
- 			}
+ 	  if (c != splitCookies.length){
+ 	    cleanCookie = splitCookies[c].trim();
+ 		}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
  		if (cleanerCookie[c] === "register") {
  			console.log("register");
 			found = true;
-      valu = "register";
+     	value = "register";
  		}
     else if (cleanerCookie[c] === "login") {
       console.log("login");
@@ -31,15 +32,16 @@ function checkCookies() {
 	if (found == false){
 		storeCookies("page", "register");
 		console.log("register");
-		pageChange();
-    value = register;
+		value="register"
 	}
 	console.log(document.cookie);
   return value;
 };
 
-function pageChange(){
-  var value = checkCookies();
+function pageChange(value){
+	if (value == null){
+		value = checkCookies();
+	}
 
   if (value === "login"){
 		console.log("hit1")
