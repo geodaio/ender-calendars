@@ -38,13 +38,12 @@ def aboutUs():
 
 @app.route("/calendar.html")
 def calendar():
-    print(session.get("user_id"))
-    if session.get("user_id") is None:
+    if "user_id" in session:
+        return render_template("calendar.html")
+    else:
         req = make_response(redirect("/login.html"))
         req.set_cookie("page", "register")
         return req
-    else:
-        return render_template("calendar.html")
 
 @app.route("/howItWorks.html")
 def howItWorks():
