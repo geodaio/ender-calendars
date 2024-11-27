@@ -60,19 +60,18 @@ def page():
              return "1"
         #elif users.query.filter_by(username=userName).first():
              #return "2"
-        #elif not userPassword:
-            #return "3"
-        #elif userPassword < 9:
-            #return "4"
+        elif not userPassword:
+            return "3"
+        elif userPassword < 9:
+            return "4"
         #elif userPassword 
-        #elif not userConf:
-            #return "5"
-        #elif userPassword != userConf:
-            #return "6"
+        elif not userConf:
+            return "5"
+        elif userPassword != userConf:
+            return "6"
         newUser = users(username=userName, hash=generate_password_hash(userPassword))
         db.session.add(newUser)
         db.session.commit()
-        #db.execute("INSERT INTO users(username, hash) VALUES (?, ?)", username, generate_password_hash(userPassword))
 
         return redirect("/")
     
