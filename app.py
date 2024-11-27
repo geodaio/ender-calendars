@@ -97,7 +97,7 @@ def page():
         else:
             correct = True
 
-        if correct = True:
+        if correct == True:
             newUser = users(username=userName, hash=generate_password_hash(userPassword))
             db.session.add(newUser)
             db.session.commit()
