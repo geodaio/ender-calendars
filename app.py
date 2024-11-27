@@ -38,6 +38,7 @@ def aboutUs():
 
 @app.route("/calendar.html")
 def calendar():
+    print(session.get("user_id"))
     if session.get("user_id") is None:
         req = make_response(redirect("/login.html"))
         req.set_cookie("page", "register")
