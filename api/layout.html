@@ -29,8 +29,8 @@
       
       <div id="headerAside">
         {% if not session["user_id"]%}
-          <a href="login.html" onclick="register()">Register</a>
-          <a href="login.html" onclick="login()">Log In</a>
+          <a href="#null" onclick="register()">Register</a>
+          <a href="#null" onclick="login()">Log In</a>
         {% else %}
           <p id="headerUsername">USERNAME</p>
           <a href=""><img src="{{ url_for('static', filename='images/icon.svg') }}" alt="" id="headerProf"></a>
