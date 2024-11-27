@@ -83,10 +83,14 @@ function storeCookies(name, value){
 function register() {
 	event.preventDefault();
 	storeCookies("page", "register");
+	if window.location.href != "https://endercalendars.vercel.app/login.html":
+		window.location.href = "https://endercalendars.vercel.app/login.html""
 	console.log("hit3")
 }
 function login() {
 	event.preventDefault();
 	storeCookies("page", "login");
+	if window.location.href != "https://endercalendars.vercel.app/login.html":
+		window.location.href = "https://endercalendars.vercel.app/login.html""
 	console.log("hit4")
 }
