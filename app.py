@@ -146,6 +146,7 @@ def page():
         if correct == True:
             print(user.userid)
             session["user_id"] = user.userid
+            print(session["user_id"])
             return redirect("calendar.html")
         else:
             return render_template("login.html", error = failReason)
