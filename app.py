@@ -56,16 +56,19 @@ def page():
         userConf = request.form.get("confPassword")
         print(userConf)
 
-        #if not userName:
-             #return "1"
-        #elif db.execute("SELECT username FROM users WHERE username = ?", username):
-             #return render_template("error.html"), 2
+        if not userName:
+             return "1"
+        #elif users.query.filter_by(username=userName).first():
+             #return "2"
         #elif not userPassword:
-            #return render_template("error.html"), 3
+            #return "3"
+        #elif userPassword < 9:
+            #return "4"
+        #elif userPassword 
         #elif not userConf:
-            #return render_template("error.html"), 4
+            #return "5"
         #elif userPassword != userConf:
-            #return render_template("error.html"), 5
+            #return "6"
         newUser = users(username=userName, hash=generate_password_hash(userPassword))
         db.session.add(newUser)
         db.session.commit()
