@@ -50,7 +50,7 @@ def howItWorks():
 def page():
     if request.method == "POST" and request.form["submit"] == "Create an Account":
         userName = request.form.get("regUsername")
-        print(username)
+        print(userName)
         userPassword = request.form.get("regPassword")
         print(userPassword)
         userConf = request.form.get("confPassword")
