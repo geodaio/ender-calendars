@@ -62,7 +62,7 @@ def page():
              #return "2"
         elif not userPassword:
             return "3"
-        elif userPassword < 9:
+        elif len(userPassword) < 9:
             return "4"
         #elif userPassword 
         elif not userConf:
