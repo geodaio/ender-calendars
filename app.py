@@ -76,7 +76,7 @@ def page():
         elif len(userPassword) > 31:
             failReason = "Error: Your Password Must be 30 Characters or Shorter."
             print(failReason)
-        elif not any(char.isdigit() for char in userPasword):
+        elif not any(char.isdigit() for char in userPassword):
             failReason = "Error: Your Password Must Include a Number."
             print(failReason)
         elif not any(char.isupper() for char in userPassword):
