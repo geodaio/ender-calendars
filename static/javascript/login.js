@@ -83,10 +83,10 @@ function storeCookies(name, value){
 function register() {
 	event.preventDefault();
 	storeCookies("page", "register");
-	pageSet();
+	console.log("hit3")
 }
 function login() {
 	event.preventDefault();
 	storeCookies("page", "login");
-	pageSet();
+	console.log("hit4")
 }
