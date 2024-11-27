@@ -48,6 +48,11 @@ def howItWorks():
 
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
+    
+    specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+    failReason = None
+    correct = False
+    
     if request.method == "POST" and request.form["submit"] == "Create an Account":
         userName = request.form.get("regUsername")
         print(userName)
@@ -57,24 +62,49 @@ def page():
         print(userConf)
 
         if not userName:
-             return "1"
-        #elif users.query.filter_by(username=userName).first():
-             #return "2"
+             failReason = "noUser"
+             print(failReason)
+        elif users.query.filter_by(username=userName).first():
+             failReason = "userTaken"
+             print(failReason)
         elif not userPassword:
-            return "3"
+            failReason = "noPassword"
+            print(failReason)
         elif len(userPassword) < 9:
-            return "4"
-        #elif userPassword 
+            failReason = "shortPass"
+            print(failReason)
+        elif len(userPassword) > 31:
+            failReason = "longPass"
+            print(failReason)
+        elif not any(char.isdigit() for char in userPasword):
+            failReason = "noNum"
+            print(failReason)
+        elif not any(char.isupper() for char in userPassword):
+            failReason = "noUpper"
+            print(failReason)
+        elif not any(char.islower() for char in userPassword):
+            failReason = "noLower"
+            print(failReason)
+        elif not any(char in specialArray for char in userPassword):
+            failReason = "noSpec"
+            print(failReason)
         elif not userConf:
-            return "5"
+            failReason = "noConf"
+            print(failReason)
         elif userPassword != userConf:
-            return "6"
-        newUser = users(username=userName, hash=generate_password_hash(userPassword))
-        db.session.add(newUser)
-        db.session.commit()
+            failReason = "notEqual"
+            print(failReason)
+        else:
+            correct = True
 
-        return redirect("/")
-    
+        if correct = True:
+            newUser = users(username=userName, hash=generate_password_hash(userPassword))
+            db.session.add(newUser)
+            db.session.commit()
+            return redirect("/")
+        else:
+            return render_template("login.html", error = failReason)
+            
     else: 
         return render_template("login.html")
 
