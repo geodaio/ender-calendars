@@ -124,7 +124,7 @@ def page():
         if not userName:
              failReason = "Error: A Username is Required."
              print(failReason)
-        elif not users.query.filter_by(username=userName).first():
+        elif users.query.filter_by(username=userName).first() == None:
              failReason = "Error: No Account With This Username. Please Check Your Username and Try Again."
              print(failReason)
         elif not userPassword:
