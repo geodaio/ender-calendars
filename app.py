@@ -5,9 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
 
 app = Flask(__name__, template_folder="api")
+#regenerate this when confirmed that database stuff works
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+
+#CHECK TO MAKE SURE THAT THE DATABASE IS CONNECTED PROPERLY HAS TO THROW AN ERROR OTHERWISE
 
 Session(app)
 
@@ -68,7 +71,7 @@ def page():
              failReason = "Error: This Username is Already Taken! Please Select a New Username"
              print(failReason)
         elif not userPassword:
-            failReason = "Error: A Password is Required"
+            failReason = "Error: A Password is Required."
             print(failReason)
         elif len(userPassword) < 7:
             failReason = "Error: Your Password Must Be 8 Characters or Longer."
@@ -101,7 +104,46 @@ def page():
             newUser = users(username=userName, hash=generate_password_hash(userPassword))
             db.session.add(newUser)
             db.session.commit()
-            return redirect("/")
+
+            user = users.query.filter_by(username=userName).first()
+            session["user_id"] = user.userId
+            #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
+            return redirect("calendar.html")
+        else:
+            return render_template("login.html", error = failReason)
+    elif request.method == "POST" and request.form["submit"] == "Log In":
+        
+        next = False
+        correct = False
+        
+        userName = request.form.get("logUsername")
+        print(userName)
+        userPassword = request.form.get("logPassword")
+        print(userPassword)
+
+        if not userName:
+             failReason = "Error: A Username is Required."
+             print(failReason)
+        elif not users.query.filter_by(username=userName).first():
+             failReason = "Error: No Account With This Username. Please Check Your Username and Try Again."
+             print(failReason)
+        elif not userPassword:
+            failReason = "Error: A Password is Required."
+            print(failReason)
+        else:
+            next = True
+
+        user = users.query.filter_by(username=userName).first()
+        
+        if next == True:
+            if check_password_hash(user.hash, userPassword):
+                correct = True
+            else:
+             failReason = "Error: Incorrect Password Provided. Please Check Your Password and Try Again."
+             print(failReason)
+        if correct == True:
+            session["user_id"] = user.userId
+            return redirect("calendar.html")
         else:
             return render_template("login.html", error = failReason)
             
