@@ -70,7 +70,7 @@ def page():
         elif not userPassword:
             failReason = "Error: A Password is Required"
             print(failReason)
-        elif len(userPassword) < 9:
+        elif len(userPassword) < 7:
             failReason = "Error: Your Password Must Be 8 Characters or Longer."
             print(failReason)
         elif len(userPassword) > 31:
