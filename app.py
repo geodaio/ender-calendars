@@ -110,7 +110,7 @@ def page():
             user = users.query.filter_by(username=userName).first()
             session["user_id"] = user.userid
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
-            return redirect("calendar.html")
+            return render_template("calendar.html")
         else:
             return render_template("login.html", error = failReason)
     elif request.method == "POST" and request.form["submit"] == "Log In":
