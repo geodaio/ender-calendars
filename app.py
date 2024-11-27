@@ -142,6 +142,7 @@ def page():
              failReason = "Error: Incorrect Password Provided. Please Check Your Password and Try Again."
              print(failReason)
         if correct == True:
+            print(user.userId)
             session["user_id"] = user.userid
             return redirect("calendar.html")
         else:
