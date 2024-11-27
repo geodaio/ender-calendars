@@ -106,7 +106,7 @@ def page():
             db.session.commit()
 
             user = users.query.filter_by(username=userName).first()
-            session["user_id"] = user.userId
+            session["user_id"] = user.userid
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
             return redirect("calendar.html")
         else:
@@ -142,7 +142,7 @@ def page():
              failReason = "Error: Incorrect Password Provided. Please Check Your Password and Try Again."
              print(failReason)
         if correct == True:
-            session["user_id"] = user.userId
+            session["user_id"] = user.userid
             return redirect("calendar.html")
         else:
             return render_template("login.html", error = failReason)
