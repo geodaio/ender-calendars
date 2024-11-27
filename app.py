@@ -52,6 +52,7 @@ def howItWorks():
 
 @app.route("/login.html", methods=["GET", "POST"])
 def page():
+    session.clear()
     
     specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
     failReason = None
