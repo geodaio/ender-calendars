@@ -62,37 +62,37 @@ def page():
         print(userConf)
 
         if not userName:
-             failReason = "noUser"
+             failReason = "Error: A Username is Required."
              print(failReason)
         elif users.query.filter_by(username=userName).first():
-             failReason = "userTaken"
+             failReason = "Error: This Username is Already Taken! Please Select a New Username"
              print(failReason)
         elif not userPassword:
-            failReason = "noPassword"
+            failReason = "Error: A Password is Required"
             print(failReason)
         elif len(userPassword) < 9:
-            failReason = "shortPass"
+            failReason = "Error: Your Password Must Be 8 Characters or Longer."
             print(failReason)
         elif len(userPassword) > 31:
-            failReason = "longPass"
+            failReason = "Error: Your Password Must be 30 Characters or Shorter."
             print(failReason)
         elif not any(char.isdigit() for char in userPasword):
-            failReason = "noNum"
+            failReason = "Error: Your Password Must Include a Number."
             print(failReason)
         elif not any(char.isupper() for char in userPassword):
-            failReason = "noUpper"
+            failReason = "Error: Your Password Must Include an Uppercase Letter."
             print(failReason)
         elif not any(char.islower() for char in userPassword):
-            failReason = "noLower"
+            failReason = "Error: Your Password Must Include a Lowecase Letter."
             print(failReason)
         elif not any(char in specialArray for char in userPassword):
-            failReason = "noSpec"
+            failReason = "Error: Your Password Must Include a Special Character From This List: !, @, #, $, %, ^, &, *, (, )."
             print(failReason)
         elif not userConf:
-            failReason = "noConf"
+            failReason = "Error: A Password Confirmation is Required. Please Retype Your Password."
             print(failReason)
         elif userPassword != userConf:
-            failReason = "notEqual"
+            failReason = "Error: Your Password and Your Password Confirmation Do Not Match. Please Check Your Password and Password Confirmation."
             print(failReason)
         else:
             correct = True
