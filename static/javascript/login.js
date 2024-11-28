@@ -81,7 +81,6 @@ function storeCookies(name, value){
 }
 
 function register() {
-	event.preventDefault();
 	storeCookies("page", "register");
 	if (window.location.href != "https://endercalendars.vercel.app/login.html")
 		window.location.href = "https://endercalendars.vercel.app/login.html";
