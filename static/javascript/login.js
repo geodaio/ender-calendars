@@ -54,11 +54,11 @@ function pageSet(value){
     document.getElementById("register").style.display = "block";
   }
 else if (value === "register" && window.location.href == "https://endercalendars.vercel.app/login.html"){
-	window.location.href = "https://endercalendars.vercel.app/login.html";
+	window.location.assign("https://endercalendars.vercel.app/login.html")
 	pageSet(value);
 }
 else if (value === "login" && window.location.href == "https://endercalendars.vercel.app/login.html"){
-	window.location.href = "https://endercalendars.vercel.app/login.html";
+	window.location.assign("https://endercalendars.vercel.app/login.html")
 	pageSet(value);
 }
 }
