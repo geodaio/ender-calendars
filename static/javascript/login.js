@@ -2,7 +2,7 @@ window.onload = function(){
   var value = checkCookies();
 pageSet(value);
 }
-
+ 
 function checkCookies() {
 	var found = false;
   var value = null;
