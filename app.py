@@ -38,7 +38,7 @@ def aboutUs():
 
 @app.route("/calendar.html")
 def calendar():
-    if session.get("user_id")
+    if session.get("user_id"):
         return render_template("calendar.html")
     else:
         req = make_response(redirect("/login.html"))
