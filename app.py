@@ -155,7 +155,11 @@ def page():
             return render_template("login.html", error = failReason)
             
     else: 
-        return render_template("login.html")
+        if session.get("user_id"):
+            req = make_response(redirect("/calendar.html"))
+            return req
+        else:
+            return render_template("login.html")
 
 @app.route("/")
 def fallback():
