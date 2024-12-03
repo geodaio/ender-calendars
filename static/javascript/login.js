@@ -42,25 +42,17 @@ function pageSet(value){
 	if (value == null){
 		value = checkCookies();
 	}
-
-  if (value === "login" && window.location.href != "https://endercalendars.vercel.app/login.html"){
+	
+  if (value === "login"){
 		console.log("hit1")
     document.getElementById("login").style.display = "block";
     document.getElementById("register").style.display = "none";
   }
-  else if (value === "register" && window.location.href != "https://endercalendars.vercel.app/login.html"){
+  else if (value === "register"){
 		console.log("hit2")
     document.getElementById("login").style.display = "none";
     document.getElementById("register").style.display = "block";
   }
-else if (value === "register" && window.location.href == "https://endercalendars.vercel.app/login.html"){
-	window.location.assign("https://endercalendars.vercel.app/login.html")
-	pageSet(value);
-}
-else if (value === "login" && window.location.href == "https://endercalendars.vercel.app/login.html"){
-	window.location.assign("https://endercalendars.vercel.app/login.html")
-	pageSet(value);
-}
 }
 
 function pageChange(value){
@@ -72,13 +64,11 @@ function pageChange(value){
 		console.log("hit1")
     document.getElementById("login").style.display = "none";
     document.getElementById("register").style.display = "block";
-    register();
   }
   else if (value === "register"){
 		console.log("hit2")
     document.getElementById("login").style.display = "block";
     document.getElementById("register").style.display = "none";
-    login();
   }
 }
 
@@ -91,6 +81,9 @@ function storeCookies(name, value){
 function register() {
 	event.preventDefault();
 	storeCookies("page", "register");
+	console.log("hit5");
+	if (window.location.href != "https://endercalendars.vercel.app/login.html")
+		window.location.href = "https://endercalendars.vercel.app/login.html";
 }
 function login() {
 	event.preventDefault();
