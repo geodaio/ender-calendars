@@ -109,8 +109,9 @@ def page():
             user = users.query.filter_by(username=userName).first()
             session["user_id"] = user.userid
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
-            request.cookies.pop()
-            return render_template("calendar.html")
+            resp = make_response(render_template("calendar.html"))
+            resp.set_cookie('page', '', expires=0)
+            return resp
         else:
             return render_template("login.html", error = failReason)
     elif request.method == "POST" and request.form["submit"] == "Log In":
@@ -147,8 +148,9 @@ def page():
             print(user.userid)
             session["user_id"] = user.userid
             print(session["user_id"])
-            request.cookies.pop()
-            return redirect("calendar.html")
+            resp = make_response(render_template("calendar.html"))
+            resp.set_cookie('page', '', expires=0)
+            return resp
         else:
             return render_template("login.html", error = failReason)
             
