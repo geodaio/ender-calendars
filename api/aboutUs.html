@@ -4,6 +4,13 @@
 
 {% block main %}
 
+{% if not session.user_id %}
+<script>
+  var value = checkCookies();
+	pageSet(value);
+</script>
+{% endif %}
+
 <h1 id="aboutUsHead">About Us</h1>
 
 <h2>How It Began</h2>
