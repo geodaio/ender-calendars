@@ -36,6 +36,7 @@ def index():
 @app.route("/aboutUs.html")
 def aboutUs():
     if "user_id" in session:
+        print("true")
         return render_template("aboutUs.html")
     else:
         return render_template("aboutUs.html", cookies = "y")
