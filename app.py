@@ -1,12 +1,12 @@
 from flask import Flask, render_template, redirect, request, session, make_response
 from flask_session import Session
-from flask_cors import CORS
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
 
 app = Flask(__name__, template_folder="api")
 #regenerate this when confirmed that database stuff works
+app.secret_key = "abcdef" #CHANGE
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
@@ -14,7 +14,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 #CHECK TO MAKE SURE THAT THE DATABASE IS CONNECTED PROPERLY HAS TO THROW AN ERROR OTHERWISE
 
 Session(app)
-CORS(app)
 
 db = SQLAlchemy(app)
 
@@ -36,14 +35,14 @@ def index():
 
 @app.route("/aboutUs.html")
 def aboutUs():
-    if session.get("user_id"):
+    if "user_id" in session:
         return render_template("aboutUs.html")
     else:
         return render_template("aboutUs.html", cookies = "y")
 
 @app.route("/calendar.html")
 def calendar():
-    if session.get("user_id"):
+    if "user_id" in session:
         return render_template("calendar.html")
     else:
         req = make_response(redirect("/login.html"))
