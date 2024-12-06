@@ -4,7 +4,7 @@
 
 {% block main %}
 
-{% if not session.user_id %}
+{% if cookies == "y"}
 <script>
 	console.log("enter");
   var value = checkCookies();
