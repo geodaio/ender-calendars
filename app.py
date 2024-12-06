@@ -112,6 +112,7 @@ def page():
             db.session.commit()
 
             user = users.query.filter_by(username=userName).first()
+            session.permanent = True
             session["user_id"] = user.userid
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
             resp = make_response(render_template("calendar.html"))
