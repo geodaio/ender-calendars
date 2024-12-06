@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, session, make_response
 from flask_session import Session
+from flask_cors import CORS
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
@@ -13,6 +14,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 #CHECK TO MAKE SURE THAT THE DATABASE IS CONNECTED PROPERLY HAS TO THROW AN ERROR OTHERWISE
 
 Session(app)
+CORS(app)
 
 db = SQLAlchemy(app)
 
