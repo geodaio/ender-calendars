@@ -35,9 +35,9 @@ def index():
 @app.route("/aboutUs.html")
 def aboutUs():
     if session.get("user_id"):
-            return render_template("aboutUs.html")
-        else:
-            return render_template("aboutUs.html", cookies = y)
+        return render_template("aboutUs.html")
+    else:
+        return render_template("aboutUs.html", cookies = y)
 
 @app.route("/calendar.html")
 def calendar():
