@@ -13,6 +13,12 @@ window.onload = function() {
   }
 }
 
+function redirectFun() {
+	var value = checkCookies();
+	if (value != "user_id"){
+		window.location.replace("/login.html");
+	}
+}
 
 function checkCookies() {
 	var found = false;
