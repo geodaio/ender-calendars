@@ -35,6 +35,7 @@ def index():
 
 @app.route("/aboutUs.html")
 def aboutUs():
+    print(session["user_id"])
     if session.get("user_id"):
         if session["user_id"]:
             print("true")
