@@ -81,7 +81,17 @@ header a{
 
 #headerUsername{
   padding-top: 1.3em;
+		display: none;
 }
+
+#headProfPic {
+	display: none;
+}
+
+#regButton, #logButton {
+	display: block;
+	}
+
 
 #headerAside{
   flex: 1;
