@@ -4,6 +4,7 @@
 
 {% block main %}
 
+
 <div id="deleteAcct">
   <h1>Delete Account?</h1>
   <p>WARNING: THIS ACTION IS IRREVERSIBLE. Upon deletion of your account, you will lose access to,</p>
@@ -16,6 +17,7 @@
   <form action="/settings.html" method="post">
     <label for="deleteConf">To proceed with account deletion, please type your username as confirmation.</label>
     <input type="text" id="deleteConf" name="deleteConf">
+    <input type="hidden" id="deleteUser" name="deleteUser" value=getValue()>
     <input type="submit" value="Delete Account" name="submit">
   </form>
 </div>
