@@ -114,6 +114,9 @@ def page():
 
             user = users.query.filter_by(username=userName).first()
             session["user_id"] = user.userid
+            print("___")
+            print(session["user_id"])
+            print("___")
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
             resp = make_response(render_template("calendar.html"))
             resp.set_cookie('page', '', expires=0)
