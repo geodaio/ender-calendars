@@ -1,7 +1,13 @@
 window.onload = function() {
   if (checkCookies() == "user_id") {
+      document.getElementById("regButton").style.display = "none";
+      document.getElementById("logButton").style.display = "none";
+      document.getElementById("regButton").style.display = "block";
+      document.getElementById("regButton").style.display = "block";
+  }
+  else {
     
-    }
+  }
 }
 
 function checkCookies() {
