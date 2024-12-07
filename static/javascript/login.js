@@ -1,3 +1,9 @@
+window.onload = function() {
+  if (checkCookies() == "user_id") {
+    
+    }
+}
+
 function checkCookies() {
 	var found = false;
   var value = null;
@@ -22,6 +28,11 @@ function checkCookies() {
       console.log("login");
       found = true;
       value = "login";
+    }
+    else if (cleanerCookie[c] === "user_id"){
+      console.log("user_id");
+      found = true;
+      value = "user_id";
     }
 	 }
 	if (found == false){
