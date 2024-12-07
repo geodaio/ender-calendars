@@ -115,6 +115,7 @@ def page():
 
             user = users.query.filter_by(username=userName).first()
             session["user_id"] = user.userid
+            session.modified = True
             print("___")
             print(session["user_id"])
             print("___")
@@ -157,6 +158,7 @@ def page():
         if correct == True:
             print(user.userid)
             session["user_id"] = user.userid
+            session.modified = True
             print(session["user_id"])
             resp = make_response(render_template("calendar.html"))
             resp.set_cookie('page', '', expires=0)
