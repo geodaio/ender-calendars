@@ -4,10 +4,9 @@
 
 {% block main %}
 
+<script>redirectFun()</script>
+
 <p>calendar</p>
 
 {% endblock %}
 
-{% block scripts %}
-  <script src="{{url_for('static', filename='javascript/redirect.js')}}"></script>
-{% endblock %}
