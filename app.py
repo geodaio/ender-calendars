@@ -40,19 +40,11 @@ def index():
 
 @app.route("/aboutUs.html")
 def aboutUs():
-    if 'user_id' in cookiesCheck():
-        return render_template("aboutUs.html")
-    else:
-        return render_template("aboutUs.html", cookies = "y")
+    return render_template("aboutUs.html")
 
 @app.route("/calendar.html")
 def calendar():
-    if "user_id" in session:
-        return render_template("calendar.html")
-    else:
-        req = make_response(redirect("/login.html"))
-        req.set_cookie("page", "register")
-        return req
+    return render_template("calendar.html")
 
 @app.route("/howItWorks.html")
 def howItWorks():
