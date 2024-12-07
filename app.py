@@ -117,7 +117,7 @@ def page():
             user = users.query.filter_by(username=userName).first()
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
             resp = make_response(render_template("calendar.html"))
-            resp.set_cookie('user_id', user.userid)
+            resp.set_cookie('user_id', str(user.userid))
             resp.set_cookie('page', '', expires=0)
             return resp
         else:
@@ -154,7 +154,7 @@ def page():
              print(failReason)
         if correct == True:
             resp = make_response(render_template("calendar.html"))
-            resp.set_cookie('user_id', user.userid)
+            resp.set_cookie('user_id', str(user.userid))
             resp.set_cookie('page', '', expires=0)
             return resp
         else:
