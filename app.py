@@ -180,7 +180,7 @@ def settings():
         
         if not deleteConf:
             failReason = "Error: Please type your username to confirm you want to delete your account."
-             print(failReason)
+            print(failReason)
         else if deleteConf != user:
             failReason = "Error: Your username and confirmation do not match. Please type your username to confirm you want to delete your account."
             print(failReason)
