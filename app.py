@@ -168,9 +168,32 @@ def page():
         else:
             return render_template("login.html")
 
-@app.route ("/settings.html")
+@app.route ("/settings.html", methods=["GET", "POST"])
 def settings():
-    return render_template("settings.html")
+    failReason = None
+    correct = False
+    
+    if request.method == "POST":
+        userName = request.form.get("deleteUser")
+        deleteConf = request.form.get("deleteConf")
+        user = users.query.filter_by(username=userName).first()
+        
+        if not deleteConf:
+            failReason = "Error: Please type your username to confirm you want to delete your account."
+             print(failReason)
+        else if deleteConf != user:
+            failReason = "Error: Your username and confirmation do not match. Please type your username to confirm you want to delete your account."
+            print(failReason)
+        else:
+            correct = True
+
+        if correct == True:
+            db.session.delete(user)
+            db.session.commit()
+        else:
+            return render_template("settings.html", error = failReason)
+    else:
+        return render_template("settings.html")
     
 @app.route("/")
 def fallback():
