@@ -3,6 +3,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
+import requests
 
 app = Flask(__name__, template_folder="api")
 #regenerate this when confirmed that database stuff works
@@ -27,6 +28,10 @@ class users(db.Model):
 #class subcalendar(db.Model):
 
 #class events(db.Model):
+
+def cookiesCheck():
+    session = requests.Session() 
+    return session.cookies.get_dict()
     
 
 @app.route("/home.html")
@@ -35,7 +40,7 @@ def index():
 
 @app.route("/aboutUs.html")
 def aboutUs():
-    if session.get("user_id"):
+    if 'user_id' in cookiesCheck():
         return render_template("aboutUs.html")
     else:
         return render_template("aboutUs.html", cookies = "y")
@@ -111,13 +116,9 @@ def page():
             db.session.commit()
 
             user = users.query.filter_by(username=userName).first()
-            session["user_id"] = user.userid
-            session.modified = True
-            print("___")
-            print(session["user_id"])
-            print("___")
             #CHECK TO MAKE SURE THINGS ADDED PROPERLY???
             resp = make_response(render_template("calendar.html"))
+            resp.set_cookie('user_id', user.userid)
             resp.set_cookie('page', '', expires=0)
             return resp
         else:
@@ -153,11 +154,8 @@ def page():
              failReason = "Error: Incorrect Password Provided. Please Check Your Password and Try Again."
              print(failReason)
         if correct == True:
-            print(user.userid)
-            session["user_id"] = user.userid
-            session.modified = True
-            print(session["user_id"])
             resp = make_response(render_template("calendar.html"))
+            resp.set_cookie('user_id', user.userid)
             resp.set_cookie('page', '', expires=0)
             return resp
         else:
