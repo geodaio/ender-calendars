@@ -168,6 +168,10 @@ def page():
         else:
             return render_template("login.html")
 
+@app.route ("/settings.html")
+def settings():
+    return render_template("settings.html")
+    
 @app.route("/")
 def fallback():
     return render_template("home.html")
