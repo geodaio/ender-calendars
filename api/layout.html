@@ -33,13 +33,13 @@
       </div>
       
       <div id="headerAside">
-        {% if not session.user_id %}
-          <button type="button" onclick="register()">Register</button>
-          <button type="button" onclick="login()">Log In</button>
-        {% else %}
+        
+          <button type="button" onclick="register()" id="regButton">Register</button>
+          <button type="button" onclick="login()" id="logButton">Log In</button>
+        
           <p id="headerUsername">USERNAME</p>
-          <a href=""><img src="{{ url_for('static', filename='images/icon.svg') }}" alt="" id="headerProf"></a>
-        {% endif %}
+          <a href="" id="headProfPic"><img src="{{ url_for('static', filename='images/icon.svg') }}" alt="" id="headerProf"></a>
+        
       </div>
     </header>
     
