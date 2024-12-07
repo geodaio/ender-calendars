@@ -13,6 +13,7 @@ window.onload = function() {
   }
 }
 
+
 function checkCookies() {
 	var found = false;
   var value = null;
