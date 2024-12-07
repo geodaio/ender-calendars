@@ -6,7 +6,10 @@ window.onload = function() {
       document.getElementById("headProfPic").style.display = "block";
   }
   else {
-    
+    document.getElementById("regButton").style.display = "block";
+    document.getElementById("logButton").style.display = "block";
+    document.getElementById("headerUsername").style.display = "none";
+    document.getElementById("headProfPic").style.display = "none";
   }
 }
 
