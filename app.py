@@ -30,6 +30,7 @@ class users(db.Model):
 
 def cookiesCheck():
     session = requests.Session() 
+    print(session)
     return session.cookies.get_dict()
     
 
