@@ -57,13 +57,15 @@ font-family: times, sans-serif; /*setting font style*/
 }
 
 h1{
-   font-size: 64px;
+   font-size: 10em;
 }
 
 h2{
-  font-size: 32px;
+  font-size: 5em;
 }
-
+h3{
+	font-size:2em;
+}
 header {
   width: 99%;
   margin: auto;
