@@ -39,7 +39,12 @@ function checkCookies() {
  		}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
- 		if (cleanerCookie[c] === "register") {
+		if (cleanerCookie[c] === "user_id"){
+      console.log("user_id");
+      found = true;
+      value = "user_id";
+    }
+ 		else if (cleanerCookie[c] === "register") {
  			console.log("register");
 			found = true;
      	value = "register";
@@ -49,11 +54,7 @@ function checkCookies() {
       found = true;
       value = "login";
     }
-    else if (cleanerCookie[c] === "user_id"){
-      console.log("user_id");
-      found = true;
-      value = "user_id";
-    }
+    
 	 }
 	if (found == false){
 		storeCookies("page", "register");
