@@ -48,11 +48,13 @@
 <h3>Charan Panthulu</h3>
 <a href="mailto:spanthulu@albany.edu">Email</a>
 <ul>
-  <li>BLANK Major, BLANK Minor/Concentration</li>
-  <li>Graduating BLANK 20XX</li>
-  <li>Specializes in:</li>
+  <li>information tecxhnology,data analytics/Concentration</li>
+  <li>Graduating may 2025</li>
+  <li>Specialize in artificial intelligence and data analytics:</li>
   <ul>
-    <li>INSERT CODING LANGUAGE HERE</li>
+    <li>C</li>
+    <li>javascript</li>
+    <li>phyton</li>
   </ul>
 </ul>
 
