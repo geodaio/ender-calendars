@@ -107,6 +107,10 @@ function storeCookies(name, value){
 	document.cookie=name+"="+value+"; expires="+myDate.toUTCString()+"; path=/";
 }
 
+function deleteCookie(name) {
+  createCookie(name,"",-1);
+}
+
 function register() {
 	event.preventDefault();
 	storeCookies("page", "register");
@@ -120,4 +124,12 @@ function login() {
 	console.log("hit4");
 	if (window.location.href != "https://endercalendars.vercel.app/login.html")
 		window.location.href = "https://endercalendars.vercel.app/login.html";
+}
+
+function logOut() [
+	event.preventDefault()
+	deleteCookie("page");
+	deleteCookie("user_id");
+	console.log("hit5");
+	window.location.replace("/home.html");
 }
