@@ -148,3 +148,9 @@ display: inherit;
   flex-direction: column;
   text-align: left;
 }
+
+#backToTop{
+	width:100%;
+	margin:auto;
+	text-align:center;
+}
