@@ -90,11 +90,13 @@ function pageChange(value){
 		console.log("hit1")
     document.getElementById("login").style.display = "none";
     document.getElementById("register").style.display = "block";
+	  storeCookies("page", "register");
   }
   else if (value === "register"){
 		console.log("hit2")
     document.getElementById("login").style.display = "block";
     document.getElementById("register").style.display = "none";
+	  storeCookies("page", "login");
   }
 }
 
