@@ -56,6 +56,14 @@ font-family: times, sans-serif; /*setting font style*/
 	/*End Damla CSS*/
 }
 
+h1{
+   font-size: 64px;
+}
+
+h2{
+  font-size: 32px;
+}
+
 header {
   width: 99%;
   margin: auto;
