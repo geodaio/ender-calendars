@@ -120,6 +120,7 @@ footer {
 	height:25vh;
 	padding-top: 1em;
 	text-align:center;
+	flex-wrap: wrap;
 }
 
 #secOne{
@@ -127,7 +128,7 @@ footer {
 	padding-right:2em;
 	display: inherit;
 	padding-left: 5em;
-	width: 45%;
+	width: 44%;
 	text-align: left;
 }
 
@@ -136,7 +137,7 @@ footer {
 	display: inherit;
 	flex-direction: column;
 	text-align: right;
-	width: 45%;
+	width: 44%;
 	padding-right: 5em;
 }
 
