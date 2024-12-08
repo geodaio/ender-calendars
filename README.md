@@ -57,13 +57,16 @@
 </ul>
 
 <h3>Kyla Shirley</h3>
-<a href="mailto:">Email</a>
+<a href="mailto:kshirley@albany.edu">Email</a>
 <ul>
-  <li>BLANK Major, BLANK Minor/Concentration</li>
-  <li>Graduating BLANK 20XX</li>
+  <li>Informatics Major, Software development Concentration</li>
+  <li>Graduating December 2025</li>
   <li>Specializes in:</li>
   <ul>
-    <li>INSERT CODING LANGUAGE HERE</li>
+    <li>Python</li>
+    <li>Java</li>
+    <li>SQL</li>
+    <li>HTML</li>
   </ul>
 </ul>
 
