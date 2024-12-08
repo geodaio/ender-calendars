@@ -39,7 +39,7 @@ function checkCookies() {
  		}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
-		if (cleanerCookie[c] === "user_id"){
+		if (typeof cleanerCookie[c] === "number"){
       console.log("user_id");
       found = true;
       value = "user_id";
