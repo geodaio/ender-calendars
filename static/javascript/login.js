@@ -11,6 +11,10 @@ window.onload = function() {
     document.getElementById("headerUsername").style.display = "none";
     document.getElementById("headProfPic").style.display = "none";
   }
+
+	if (window.location.href != "https://endercalendars.vercel.app/login.html"){
+		pageSet(checkCookies());
+	}
 }
 
 function redirectFun() {
