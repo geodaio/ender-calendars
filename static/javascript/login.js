@@ -12,7 +12,7 @@ window.onload = function() {
     document.getElementById("headProfPic").style.display = "none";
   }
 
-	if (window.location.href != "https://endercalendars.vercel.app/login.html"){
+	if (window.location.href == "https://endercalendars.vercel.app/login.html"){
 		pageSet(checkCookies());
 	}
 }
