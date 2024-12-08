@@ -1,5 +1,5 @@
 window.onload = function() {
-  if (checkCookies() == "user_id") {
+  if (typeof checkCookies() == "number") {
       document.getElementById("regButton").style.display = "none";
       document.getElementById("logButton").style.display = "none";
       document.getElementById("headerUsername").style.display = "block";
