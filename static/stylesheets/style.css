@@ -154,3 +154,7 @@ display: inherit;
 	margin:auto;
 	text-align:center;
 }
+.homestuff {
+	font-weight: bold;
+        color: blue;
+    }
