@@ -16,7 +16,7 @@ window.onload = function() {
 		pageSet(checkCookies());
 	}
 }
-
+ 
 function redirectFun() {
 	var value = checkCookies();
 	if (value != "user_id"){
