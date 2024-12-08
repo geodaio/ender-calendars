@@ -31,11 +31,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	/*Damla CSS*/
 font-family: times, sans-serif; /*setting font style*/
-    display: flex; /*to adjust to different screen types*/
-    justify-content: center; /*horizontally center*/
-    align-items: center; /*vertically center everything*/
-    min-height: 100px; /*to make sure there is a minumum height*/
-    margin: 0; /*to remove the default margins*/
     background-color: gold; /*background color is set to gold*/
 	/*End Damla CSS*/
 	line-height: 1;
