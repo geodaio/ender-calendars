@@ -6,21 +6,6 @@
 
 <script>redirectFun()</script>
 
-<div id="calendarMain">
-  
-</div>
-
-{% endblock %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>ENDER</title>
-<!--linking to css file for calendar-->
-    <link rel="stylesheet" href="calendar.css">
-</head>
-<body>
     <div class="calendar">
 <!--header with the navigation buttons-->
         <div class="header">
@@ -57,8 +42,10 @@
             <button id="saveEvent">Save</button>
         </div>
     </div>
-    
+
+{% endblock %}
+
+{% block scripts %}
 <!--links to the js file for the calendar functions-->
     <script src="calendar.js"></script>
-</body>
-</html>
+{% endblock %}
