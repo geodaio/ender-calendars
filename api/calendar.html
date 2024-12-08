@@ -47,5 +47,6 @@
 
 {% block scripts %}
 <!--links to the js file for the calendar functions-->
-    <script src="calendar.js"></script>
+<script src="{{url_for('static', filename='javascript/calendar.js')}}"></script>
+
 {% endblock %}
