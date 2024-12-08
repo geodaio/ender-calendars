@@ -1,5 +1,5 @@
 window.onload = function() {
-  if (typeof checkCookies() == "number") {
+  if (!(isNaN(checkCookies()))) {
       document.getElementById("regButton").style.display = "none";
       document.getElementById("logButton").style.display = "none";
       document.getElementById("headerUsername").style.display = "block";
@@ -39,7 +39,7 @@ function checkCookies() {
  		}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
-		if (typeof cleanerCookie[c] === "number"){
+		if (!(isNaN(cleanerCookie[c]))){
       console.log("user_id");
       found = true;
       value = "user_id";
