@@ -259,14 +259,14 @@ button:hover {
 }
 
 /* Introduction Section */
-#howItWorksHead + h2 {
+#howItWorksHead h2 {
   font-size: 1.8em;
   margin-top: 40px;
   color: #333;
   font-family: 'Arial', sans-serif;
 }
 
-#howItWorksHead + h2 + p {
+#howItWorksHead h2 p {
   font-size: 1.1em;
   line-height: 1.6;
   color: #555;
@@ -295,13 +295,13 @@ ol li {
 }
 
 /* FAQs Section */
-#howItWorksHead + h2 + h2 {
+#howItWorksHead h2 h2 {
   margin-top: 40px;
   font-size: 1.8em;
   color: #333;
 }
 
-#howItWorksHead + h2 + h2 + p {
+#howItWorksHead h2 h2 p {
   font-size: 1.1em;
   line-height: 1.6;
   color: #555;
