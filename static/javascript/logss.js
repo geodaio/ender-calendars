@@ -39,7 +39,7 @@ function checkCookies() {
  		}
  		var cleanerCookie = cleanCookie.split("=");
  		console.log(cleanerCookie);
-		if (!(isNaN(cleanerCookie[c]))){
+		if (!isNaN(parseFloat(cleanerCookie[c]))){
       console.log("user_id");
       found = true;
       value = "user_id";
