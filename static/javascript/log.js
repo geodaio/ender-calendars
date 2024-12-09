@@ -126,7 +126,7 @@ function login() {
 		window.location.href = "https://endercalendars.vercel.app/login.html";
 }
 
-function logOut() [
+function logOut() {
 	event.preventDefault()
 	deleteCookie("page");
 	deleteCookie("user_id");
