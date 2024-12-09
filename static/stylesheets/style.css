@@ -220,26 +220,40 @@ display: inherit;
   background-color: white;
   padding-top:2vh;
   padding-bottom:2vh;
+  font-size:.85em;
 }
 
 #register label {
-  width:100%;
+  width:30%;
   margin:2vh;
+  display: inline-block;
 }
 
 #login label {
-  width:100%;
+  width:60%;
   margin:2vh;
 }
 
+#register form {
+  text-align:center;
+}
 #register input {
-  width:50%;
+  width:39%;
   margin:2vh;
 }
 
 #login input {
-  width:50%;
+  width:40%;
   margin:2vh;
+}
+
+.backHome{
+  color:black;
+  /*! float:left; */
+  padding:2vh;
+  /*! padding-right: 0; */
+  width: 15%;
+  display: block;
 }
 
 /*Damla CSS*/
