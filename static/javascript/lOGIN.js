@@ -6,7 +6,7 @@ window.onload = function() {
       document.getElementById("headerUsername").style.display = "block";
       document.getElementById("headProfPic").style.display = "block";
   }
-  else if (window.location.href != "https://endercalendars.vercel.app/login.html"v){
+  else if (window.location.href != "https://endercalendars.vercel.app/login.html"){
     document.getElementById("regButton").style.display = "block";
     document.getElementById("logButton").style.display = "block";
     document.getElementById("headerUsername").style.display = "none";
