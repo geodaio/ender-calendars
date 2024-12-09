@@ -1,4 +1,5 @@
 window.onload = function() {
+	deleteCookie("__vercel_toolbar");
   if (checkCookies() === "user_id") {
       document.getElementById("regButton").style.display = "none";
       document.getElementById("logButton").style.display = "none";
