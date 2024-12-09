@@ -108,7 +108,7 @@ function storeCookies(name, value){
 }
 
 function deleteCookie(name) {
-  createCookie(name,"",-1);
+  storeCookies(name,"",-1);
 }
 
 function register() {
