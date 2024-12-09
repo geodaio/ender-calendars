@@ -117,7 +117,7 @@ header a{
 }
 
 .changeClick, .period {
-	float:left;
+  text-align:center;
 }
 
 
@@ -176,6 +176,7 @@ display: inherit;
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
   -ms-animation: fadeIn 5s;
+  /*! display: flex; */
 }
 
 @keyframes fadeIn {
@@ -208,8 +209,38 @@ display: inherit;
   100% { opacity: 1; }
 }
 
+#register, #login {
+   display: block;
+  width: 45%;
+  margin: auto;
+    margin-top: auto;
+  text-align: center;
+  height: min-content;
+  margin-top: 20vh;
+  background-color: white;
+  padding-top:2vh;
+  padding-bottom:2vh;
+}
 
+#register label {
+  width:100%;
+  margin:2vh;
+}
 
+#login label {
+  width:100%;
+  margin:2vh;
+}
+
+#register input {
+  width:50%;
+  margin:2vh;
+}
+
+#login input {
+  width:50%;
+  margin:2vh;
+}
 
 /*Damla CSS*/
 .calendar {
