@@ -1,45 +1,59 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
 
-{% block title %} Log-In {% endblock %}
+    <title>Ender: {% block title %}{% endblock %}</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logoLight.svg') }}" id="favicon">
+      
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
 
-{% block main %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@0,6..72;1,6..72&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-{{ error }}
+    <script src="{{url_for('static', filename='javascript/favicon.js')}}"></script>
+    
+    <script src="{{url_for('static', filename='javascript/loginn.js')}}"></script>
 
-<div id="login">
-  <h1>Log In</h1>
-  <form action="/login.html" method="post">
-    <label for="username">Username</label>
-    <input type="text" id="logUsername" name="logUsername">
-    <label for="password">Password</label>
-    <input type="password" id="logPassword" name="logPassword">
-    <input type="submit" value="Log In" name="submit">
-  </form>
-  <p class="prompt">New to Ender?</p>
-  <p class="changeClick" onclick="pageChange()">Create an Account</p>
-  <p class="period">.</p>
-</div>
-
-<div id="register">
-  <h1>Create an Account</h1>
-   <form action="/login.html" method="post">
-    <label for="username">Username</label>
-    <input type="text" id="regUsername" name="regUsername">
-    <label for="password">Password</label>
-    <input type="password" id="regPassword" name="regPassword">
-     <label for="confPassword">Confirm Password</label>
-    <input type="password" id="regConf" name="confPassword">
-    <input type="submit" value="Create an Account" name="submit">
-  </form>
-  <p class="prompt">Already have an account?</p>
-  <p class="changeClick" onclick="pageChange()">Log In</p>
-  <p class="period">.</p>
-</div>
-
-{% endblock %}
-
-{% block scripts %}
-
-<script src="{{url_for('static', filename='javascript/login.js')}}"></script>
-
-{% endblock %}
+  </head>
+  <body>
+    
+    {{ error }}
+    
+    <div id="login">
+      <h1>Log In</h1>
+      <form action="/login.html" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="logUsername" name="logUsername">
+        <label for="password">Password</label>
+        <input type="password" id="logPassword" name="logPassword">
+        <input type="submit" value="Log In" name="submit">
+      </form>
+      <p class="prompt">New to Ender?</p>
+      <p class="changeClick" onclick="pageChange()">Create an Account</p>
+      <p class="period">.</p>
+    </div>
+    
+    <div id="register">
+      <h1>Create an Account</h1>
+       <form action="/login.html" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="regUsername" name="regUsername">
+        <label for="password">Password</label>
+        <input type="password" id="regPassword" name="regPassword">
+         <label for="confPassword">Confirm Password</label>
+        <input type="password" id="regConf" name="confPassword">
+        <input type="submit" value="Create an Account" name="submit">
+      </form>
+      <p class="prompt">Already have an account?</p>
+      <p class="changeClick" onclick="pageChange()">Log In</p>
+      <p class="period">.</p>
+    </div>
+  </body>
+</html>
+    
+    
