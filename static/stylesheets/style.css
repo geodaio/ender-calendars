@@ -176,36 +176,30 @@ display: inherit;
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
   -ms-animation: fadeIn 5s;
-  /*! display: flex; */
 }
 
 @keyframes fadeIn {
   0% { opacity: 0; }
-	50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
 
 @-moz-keyframes fadeIn {
   0% { opacity: 0; }
-	50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
 
 @-webkit-keyframes fadeIn {
   0% { opacity: 0; }
-	50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
 
 @-o-keyframes fadeIn {
   0% { opacity: 0; }
-	50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
 
 @-ms-keyframes fadeIn {
   0% { opacity: 0; }
-	50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
 
