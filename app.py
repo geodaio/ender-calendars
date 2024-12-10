@@ -169,15 +169,16 @@ def settings():
         userName = request.form.get("deleteUser")
         deleteConf = request.form.get("deleteConf")
         user = users.query.filter_by(username=userName).first()
-        
-        if not deleteConf:
-            failReason = "Error: Please type your username to confirm you want to delete your account."
-            print(failReason)
-        elif deleteConf != user:
-            failReason = "Error: Your username and confirmation do not match. Please type your username to confirm you want to delete your account."
-            print(failReason)
-        else:
-            correct = True
+
+        failReason = "Error. This feature has not yet been implemented. Please check back soon!"
+        #if not deleteConf:
+            #failReason = "Error: Please type your username to confirm you want to delete your account."
+            #print(failReason)
+        #elif deleteConf != user:
+            #failReason = "Error: Your username and confirmation do not match. Please type your username to confirm you want to delete your account."
+            #print(failReason)
+        #else:
+            #correct = True
 
         if correct == True:
             db.session.delete(user)
