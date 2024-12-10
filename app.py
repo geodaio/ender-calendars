@@ -6,8 +6,8 @@ from sqlalchemy import insert
 
 app = Flask(__name__, template_folder="api")
 #regenerate this when confirmed that database stuff works
-app.secret_key = "abcdef" #CHANGE
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://neondb_owner:QWzy9o8xUFCY@ep-long-brook-a51teh6g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
+app.secret_key = "abcdef"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
 app.config["SESSION_PERMANENT"] = True
 app.config["SESSION_TYPE"] = "filesystem"
 
