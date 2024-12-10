@@ -3,6 +3,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
+import os
 
 app = Flask(__name__, template_folder="api")
 #regenerate this when confirmed that database stuff works
