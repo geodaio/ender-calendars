@@ -73,25 +73,3 @@
 </ul>
 
 <hr>
-
-<h2>Work Split</h2>
-<h3>Damla Sisman</h3>
-<ul>
-  <li></li>
-</ul>
-<h3>Devishti Jainarain</h3>
-<ul>
-  <li></li>
-</ul>
-<h3>Abigail Powell</h3>
-<ul>
-  <li></li>
-</ul>
-<h3>Charan Panthulu</h3>
-<ul>
-  <li></li>
-</ul>
-<h3>Kyla Shirley</h3>
-<ul>
-  <li></li>
-</ul>
