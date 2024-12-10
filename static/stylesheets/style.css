@@ -224,8 +224,9 @@ display: inherit;
 }
 
 #login label {
-  width:60%;
+  width:30%;
   margin:2vh;
+  display: inline-block;
 }
 
 #register form {
